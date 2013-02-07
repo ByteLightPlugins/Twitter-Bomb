@@ -7,9 +7,13 @@ $(function() {
   })
   
   if (BL.twitterAuthenticated()) {
-    $('#tweet').show()
+    var tweetText = 'You just tweeted: ' + data.tweetText;
+    
+    alert(tweetText)
+    
+    $('#tweet').show();
     BL.tweet(data.tweetText, true, data.oncePerSession, function() {
-      $('#tweet').text('You just tweeted: ' + data.tweetText);
+      $('#tweet').text(tweetText);
     })
   }
   else {
