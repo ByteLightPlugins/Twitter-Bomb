@@ -6,17 +6,18 @@ $(function() {
     BL.authorizeTwitter();
   })
   
-  if (BL.twitterAuthenticated()) {
-    var tweetText = 'You just tweeted: ' + data.tweetText;
+  if (!BL.twitterAuthenticated(function() {
+    $('button').hide();
+    BL.previewReady(); 
     
-    alert(tweetText)
-    
-    $('#tweet').show();
     BL.tweet(data.tweetText, true, data.oncePerSession, function() {
       $('#tweet').text(tweetText);
+      $('#tweet').show();
+      BL.previewReady(); 
+      var tweetText = 'You just tweeted: ' + data.tweetText;
+      alert(tweetText)
     })
-  }
-  else {
+  })) {
     $('button').show()
   }
     
