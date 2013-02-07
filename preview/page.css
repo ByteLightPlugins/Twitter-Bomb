@@ -1,6 +1,15 @@
 #tweet {
   font-size: 20px;
 }
+
 #logo {
   text-align: center;
+}
+
+#tweetContainer {
+  text-align: center;
+}
+
+.bl-preview-container {
+  height: 165px !important; 
 }
