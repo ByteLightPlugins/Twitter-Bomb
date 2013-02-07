@@ -7,7 +7,7 @@ $(function() {
   })
   
   if (BL.twitterAuthenticated()) {
-    $('#twee').show()
+    $('#tweet').show()
     BL.tweet(data.tweetText, true, data.oncePerSession, function() {
       $('#tweet').text('You just tweeted: ' + data.tweetText);
     })
